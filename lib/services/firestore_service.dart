@@ -13,7 +13,7 @@ class FirestoreService {
       await userCollection.doc(user.id).set(user.toJson());
     } catch (error) {
       throw FirestoreException(
-        message: 'Echec de création d\'un nouvel utilisateur',
+        message: 'Error you can\'t create a User',
         devDetails: '$error',
       );
     }
@@ -35,7 +35,7 @@ class FirestoreService {
     } else {
       throw FirestoreException(
           message:
-              'le userId est vide . Veuillez donner un id valide à la base de donnée');
+              'The UserId doesn\'t exist');
     }
   }
 }
